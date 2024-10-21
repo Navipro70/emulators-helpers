@@ -5,19 +5,21 @@ import random
 """
 Пременные конфигурации
 """
-LDPLAYER_PATH = "D:\\LDPlayer\\LDPlayer9\\vms\\config"  # Замените папку на вашу по аналогии
-emulators = range(0, 150)  # Указываем с какого по какой эмулятор хотим сделать настройку
+LDPLAYER_PATH = "B:\\LDPlayer\\LDPlayer9\\vms\\config"  # Замените папку на вашу по аналогии
+emulators = range(0, 5)  # Указываем с какого по какой эмулятор хотим сделать настройку
 
 """
 Настройки
 """
+new_root = True
 new_adb_debug = 1  # Включение adb debug, 0 - выключить, 1 - включить, нужно дла будущей втоматизации
 new_resolution_width = 900  # Ширина эмулятора
 new_resolution_height = 1600  # Высота эмлутора
-new_resolution_dpi = 320  # Разрешение эмулятора
+new_resolution_dpi = 320  # dpi эмулятора
 new_close_option = 1 # 1 - пропускать окно с предупреждением закрытия эмулятора, 0 - показывать окно
 new_cpu_count = 1  # Кол-во ядер для эмулятора
 new_memory_size = 2048  # ОЗУ выделяемое для эмулятора
+
 
 # Здесь указываем локацию по latitude (от и до), генерируется рандомно
 min_latitude, max_latitude = (
@@ -50,55 +52,43 @@ def update_config(file_path):
         return
 
     new_imei = generate_imei()
-    if "propertySettings.phoneIMEI" in config_data:
-        config_data["propertySettings.phoneIMEI"] = new_imei
+    config_data["propertySettings.phoneIMEI"] = new_imei
 
     new_imsi = generate_imsi()
-    if "propertySettings.phoneIMSI" in config_data:
-        config_data["propertySettings.phoneIMSI"] = new_imsi
+    config_data["propertySettings.phoneIMSI"] = new_imsi
 
     new_sim_serial = generate_sim_serial()
-    if "propertySettings.phoneSimSerial" in config_data:
-        config_data["propertySettings.phoneSimSerial"] = new_sim_serial
+    config_data["propertySettings.phoneSimSerial"] = new_sim_serial
 
     new_android_id = generate_android_id()
-    if "propertySettings.phoneAndroidId" in config_data:
-        config_data["propertySettings.phoneAndroidId"] = new_android_id
+    config_data["propertySettings.phoneAndroidId"] = new_android_id
 
     new_mac_address = generate_mac_address()
-    if "propertySettings.macAddress" in config_data:
-        config_data["propertySettings.macAddress"] = new_mac_address
+    config_data["propertySettings.macAddress"] = new_mac_address
 
     location = generate_coordinates()
-    if "statusSettings.location" in config_data:
-        config_data["statusSettings.location"] = location
+    config_data["statusSettings.location"] = location
 
     random_phone = get_random_phone()
-    if "propertySettings.phoneModel" in config_data:
-        config_data["propertySettings.phoneModel"] = f"{random_phone['phoneModel']}"
-    if "propertySettings.phoneManufacturer" in config_data:
-        config_data["propertySettings.phoneManufacturer"] = (
-            f"{random_phone['phoneManufacturer']}"
-        )
+    config_data["propertySettings.phoneModel"] = f"{random_phone['phoneModel']}"
+    config_data["propertySettings.phoneManufacturer"] = (
+        f"{random_phone['phoneManufacturer']}"
+    )
 
-    if "basicSettings.adbDebug" in config_data:
-        config_data["basicSettings.adbDebug"] = new_adb_debug
+    config_data["basicSettings.rootMode"] = True
+    config_data["basicSettings.adbDebug"] = new_adb_debug
 
-    if "advancedSettings.resolution" in config_data:
-        config_data["advancedSettings.resolution"]["width"] = new_resolution_width
-        config_data["advancedSettings.resolution"]["height"] = new_resolution_height
+    config_data["advancedSettings.resolution"] = {}
+    config_data["advancedSettings.resolution"]["width"] = new_resolution_width
+    config_data["advancedSettings.resolution"]["height"] = new_resolution_height
 
-    if "advancedSettings.resolutionDpi" in config_data:
-        config_data["advancedSettings.resolutionDpi"] = new_resolution_dpi
+    config_data["advancedSettings.resolutionDpi"] = new_resolution_dpi
 
-    if "statusSettings.closeOption" in config_data:
-        config_data["statusSettings.closeOption"] = new_close_option
+    config_data["statusSettings.closeOption"] = new_close_option
 
-    if "advancedSettings.cpuCount" in config_data:
-        config_data["advancedSettings.cpuCount"] = new_cpu_count
+    config_data["advancedSettings.cpuCount"] = new_cpu_count
 
-    if "advancedSettings.memorySize" in config_data:
-        config_data["advancedSettings.memorySize"] = new_memory_size
+    config_data["advancedSettings.memorySize"] = new_memory_size
 
     with open(file_path, "w", encoding="utf-8") as file:
         json.dump(config_data, file, indent=4)
