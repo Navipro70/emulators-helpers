@@ -5,8 +5,8 @@ import random
 """
 Пременные конфигурации
 """
-LDPLAYER_PATH = "B:\\LDPlayer\\LDPlayer9\\vms\\config"  # Замените папку на вашу по аналогии
-emulators = range(0, 5)  # Указываем с какого по какой эмулятор хотим сделать настройку
+LDPLAYER_PATH = "D:\\LDPlayer\\LDPlayer9\\vms\\config"  # Замените папку на вашу по аналогии
+emulators = range(0, 100)  # Указываем с какого по какой эмулятор хотим сделать настройку
 
 """
 Настройки
