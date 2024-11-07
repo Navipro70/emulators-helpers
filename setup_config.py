@@ -5,8 +5,12 @@ import random
 """
 Пременные конфигурации
 """
-LDPLAYER_PATH = "D:\\LDPlayer\\LDPlayer9\\vms\\config"  # Замените папку на вашу по аналогии
-emulators = range(0, 100)  # Указываем с какого по какой эмулятор хотим сделать настройку
+LDPLAYER_PATH = (
+    "D:\\LDPlayer\\LDPlayer9\\vms\\config"  # Замените папку на вашу по аналогии
+)
+emulators = range(
+    0, 100
+)  # Указываем с какого по какой эмулятор хотим сделать настройку
 
 """
 Настройки
@@ -16,7 +20,9 @@ new_adb_debug = 1  # Включение adb debug, 0 - выключить, 1 - �
 new_resolution_width = 900  # Ширина эмулятора
 new_resolution_height = 1600  # Высота эмлутора
 new_resolution_dpi = 320  # dpi эмулятора
-new_close_option = 1 # 1 - пропускать окно с предупреждением закрытия эмулятора, 0 - показывать окно
+new_close_option = (
+    1  # 1 - пропускать окно с предупреждением закрытия эмулятора, 0 - показывать окно
+)
 new_cpu_count = 1  # Кол-во ядер для эмулятора
 new_memory_size = 2048  # ОЗУ выделяемое для эмулятора
 
@@ -25,19 +31,67 @@ new_memory_size = 2048  # ОЗУ выделяемое для эмулятора
 min_latitude, max_latitude = (
     40.512,
     60.241,
-)  
+)
 
 # Здесь указываем локацию по longtirude (от и до), генерируется рандомно
 min_longitude, max_longitude = (
     25.141,
     40.123,
-)  
+)
 
 # Здесь по аналогии можете добавить телефоны которые ставите на эмуляторы
 phones = [
     {"phoneModel": "MX912", "phoneManufacturer": "nubia"},
     {"phoneModel": "REDMI9SKNOTE9", "phoneManufacturer": "Xiaomi"},
-    #{"phoneModel": "ВАША МОДЕЛЬ", "phoneManufacturer": "ВАШ ПРОИЗВОДИТЕЛЬ"},
+    {"phoneModel": "GalaxyS21", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "P40Pro", "phoneManufacturer": "Huawei"},
+    {"phoneModel": "Pixel5", "phoneManufacturer": "Google"},
+    {"phoneModel": "Mate40", "phoneManufacturer": "Huawei"},
+    {"phoneModel": "OnePlus8T", "phoneManufacturer": "OnePlus"},
+    {"phoneModel": "Mi11Ultra", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "GalaxyA52", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "Realme8Pro", "phoneManufacturer": "Realme"},
+    {"phoneModel": "RedmiNote10", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "GalaxyM31", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "PocoX3Pro", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "Nokia8.3", "phoneManufacturer": "Nokia"},
+    {"phoneModel": "VivoX60Pro", "phoneManufacturer": "Vivo"},
+    {"phoneModel": "OppoReno5", "phoneManufacturer": "Oppo"},
+    {"phoneModel": "GalaxyZFold3", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "Mi10T", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "Redmi9", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "MotoG9Power", "phoneManufacturer": "Motorola"},
+    {"phoneModel": "OnePlusNord", "phoneManufacturer": "OnePlus"},
+    {"phoneModel": "GalaxyA72", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "PocoF3", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "GalaxyM51", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "VivoV21", "phoneManufacturer": "Vivo"},
+    {"phoneModel": "RealmeNarzo30", "phoneManufacturer": "Realme"},
+    {"phoneModel": "OppoA74", "phoneManufacturer": "Oppo"},
+    {"phoneModel": "Nokia5.4", "phoneManufacturer": "Nokia"},
+    {"phoneModel": "RedmiNote8", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "Mi9T", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "GalaxyA12", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "Pixel4a", "phoneManufacturer": "Google"},
+    {"phoneModel": "Mate30Pro", "phoneManufacturer": "Huawei"},
+    {"phoneModel": "PocoM3", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "GalaxyNote20", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "OnePlus9", "phoneManufacturer": "OnePlus"},
+    {"phoneModel": "VivoY51", "phoneManufacturer": "Vivo"},
+    {"phoneModel": "RealmeC25", "phoneManufacturer": "Realme"},
+    {"phoneModel": "OppoA53", "phoneManufacturer": "Oppo"},
+    {"phoneModel": "MotoG8", "phoneManufacturer": "Motorola"},
+    {"phoneModel": "GalaxyA32", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "PocoX2", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "Redmi8", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "GalaxyM21", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "OnePlus7T", "phoneManufacturer": "OnePlus"},
+    {"phoneModel": "MiA3", "phoneManufacturer": "Xiaomi"},
+    {"phoneModel": "VivoS1", "phoneManufacturer": "Vivo"},
+    {"phoneModel": "RealmeX50", "phoneManufacturer": "Realme"},
+    {"phoneModel": "GalaxyS20FE", "phoneManufacturer": "Samsung"},
+    {"phoneModel": "OppoF17", "phoneManufacturer": "Oppo"},
+    {"phoneModel": "Nokia7.2", "phoneManufacturer": "Nokia"},
 ]
 
 
