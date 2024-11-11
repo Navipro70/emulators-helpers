@@ -17,8 +17,8 @@ emulators = range(
 """
 new_root = True
 new_adb_debug = 1  # Включение adb debug, 0 - выключить, 1 - включить, нужно дла будущей втоматизации
-new_resolution_width = 900  # Ширина эмулятора
-new_resolution_height = 1600  # Высота эмлутора
+new_resolution_width = 600  # Ширина эмулятора
+new_resolution_height = 1300  # Высота эмлутора
 new_resolution_dpi = 320  # dpi эмулятора
 new_close_option = (
     1  # 1 - пропускать окно с предупреждением закрытия эмулятора, 0 - показывать окно
