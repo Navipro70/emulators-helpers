@@ -12,9 +12,9 @@ emulators = range(
     0, 100
 )  # Указываем с какого по какой эмулятор хотим сделать настройку
 
-new_resolution_width = range(600, 700)  # Ширина эмулятора
-new_resolution_height = range(1200, 1500)  # Высота эмлутора
-new_resolution_dpi = range(300, 350)
+new_resolution_width = range(460, 740)  # Ширина эмулятора
+new_resolution_height = range(560, 1240)  # Высота эмлутора
+new_resolution_dpi = range(250, 350)
 
 def update_config(file_path):
     try:
